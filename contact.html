@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CONTACT｜MFWORK（古川真理）公式サイト</title>
+<meta name="description" content="SNS運用・X運用・Web集客・GBP・ホームページ改善・AI活用のご相談はこちらから。「何から改善すればいいか分からない」段階でも大丈夫です。">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="img/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">MFWORK<small>古川真理｜SNS × Web × AI 集客導線設計</small></a>
+    <button class="nav-toggle" aria-label="メニュー" onclick="document.querySelector('.global-nav').classList.toggle('open')">☰</button>
+    <nav class="global-nav">
+      <ul>
+        <li><a href="index.html">TOP</a></li>
+        <li><a href="service.html">SERVICE</a></li>
+        <li><a href="case.html">CASE STUDY</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="column.html">COLUMN</a></li>
+        <li><a href="contact.html" class="nav-cta current">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero">
+  <span class="en">CONTACT</span>
+  <h1>お問い合わせ</h1>
+</div>
+
+<section class="section">
+  <div class="container-narrow">
+    <div class="section-head">
+      <p class="desc">
+        「何から改善すればいいか分からない」そんな段階でも大丈夫です。<br>
+        まず現在の状況と課題を整理するところから、一緒に考えます。
+      </p>
+    </div>
+
+    <form class="contact-form" id="contactForm" action="https://ssgform.com/s/JcPst3vdgggj" method="post">
+      <div class="form-row">
+        <label class="field-label" for="company">会社名・屋号<span class="optional">任意</span></label>
+        <input type="text" id="company" name="会社名" placeholder="例）株式会社〇〇">
+      </div>
+
+      <div class="form-row">
+        <label class="field-label" for="name">氏名<span class="required">必須</span></label>
+        <input type="text" id="name" name="氏名" required placeholder="例）山田 太郎">
+      </div>
+
+      <div class="form-row">
+        <label class="field-label" for="email">メールアドレス<span class="required">必須</span></label>
+        <input type="email" id="email" name="メールアドレス" required placeholder="例）info@example.com">
+      </div>
+
+      <div class="form-row">
+        <label class="field-label" for="site">Webサイト・SNSアカウント<span class="optional">任意</span></label>
+        <input type="url" id="site" name="Webサイト" placeholder="例）https://example.com">
+      </div>
+
+      <div class="form-row">
+        <span class="field-label">ご相談内容（複数選択可）<span class="required">必須</span></span>
+        <div class="checkbox-grid">
+          <label><input type="checkbox" name="相談内容[]" value="SNS運用">SNS運用</label>
+          <label><input type="checkbox" name="相談内容[]" value="X運用">X運用</label>
+          <label><input type="checkbox" name="相談内容[]" value="Web集客">Web集客</label>
+          <label><input type="checkbox" name="相談内容[]" value="GBP">Googleビジネスプロフィール</label>
+          <label><input type="checkbox" name="相談内容[]" value="ホームページ改善">ホームページ改善</label>
+          <label><input type="checkbox" name="相談内容[]" value="AI活用">AI活用</label>
+          <label><input type="checkbox" name="相談内容[]" value="その他">その他</label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label class="field-label" for="problem">現在困っていること<span class="required">必須</span></label>
+        <textarea id="problem" name="現在困っていること" required placeholder="例）SNSを1年続けていますが、問い合わせにつながっていません。"></textarea>
+      </div>
+
+      <div class="form-row">
+        <label class="field-label" for="request">希望する支援内容<span class="optional">任意</span></label>
+        <textarea id="request" name="希望する支援内容" placeholder="例）運用を任せたい／自分でできるようにアドバイスがほしい　など"></textarea>
+      </div>
+
+      <div class="form-row">
+        <label class="field-label" for="budget">ご予算<span class="optional">任意</span></label>
+        <select id="budget" name="予算">
+          <option value="">選択してください</option>
+          <option>〜3万円／月</option>
+          <option>3〜5万円／月</option>
+          <option>5〜10万円／月</option>
+          <option>10万円以上／月</option>
+          <option>単発（スポット）で相談したい</option>
+          <option>未定・相談しながら決めたい</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label class="field-label" for="timing">希望開始時期<span class="optional">任意</span></label>
+        <select id="timing" name="希望開始時期">
+          <option value="">選択してください</option>
+          <option>すぐに始めたい</option>
+          <option>1ヶ月以内</option>
+          <option>2〜3ヶ月以内</option>
+          <option>時期は未定</option>
+        </select>
+      </div>
+
+      <div class="form-submit">
+        <button type="submit" class="btn btn-accent">この内容で送信する</button>
+        <p class="form-note">
+          送信いただいた内容は<a href="privacy.html">プライバシーポリシー</a>に基づき取り扱います。<br>
+          通常2〜3営業日以内にメールにてご返信いたします。
+        </p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <strong>MFWORK</strong>
+      古川真理｜Webマーケティング／SNS・集客導線設計／生成AI活用
+      <ul class="sns-links">
+        <li><a href="https://x.com/mfparallel" target="_blank" rel="noopener" aria-label="X（旧Twitter）"><img src="img/logo-black.png" alt="X"></a></li>
+        <li><a href="https://note.com/mfparallel" target="_blank" rel="noopener" aria-label="note"><img src="img/logo.png" alt="note"></a></li>
+        <li><a href="https://www.linkedin.com/in/mfwork09/" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="img/InBug-Black.png" alt="LinkedIn"></a></li>
+      </ul>
+    </div>
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="index.html">TOP</a></li>
+        <li><a href="service.html">SERVICE</a></li>
+        <li><a href="case.html">CASE STUDY</a></li>
+      </ul>
+      <ul>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="column.html">COLUMN</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+      <ul>
+        <li><a href="privacy.html">プライバシーポリシー</a></li>
+        <li><a href="tokushoho.html">特定商取引法に基づく表記</a></li>
+      </ul>
+    </nav>
+  </div>
+  <p class="copyright">&copy; 2026 MFWORK. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

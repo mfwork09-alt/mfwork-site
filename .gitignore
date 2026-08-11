@@ -1,0 +1,15 @@
+# 内部資料（公開しない）
+HP案.txt
+
+# 開発用の設定
+.claude/
+
+# サイトから参照していない元画像（Web用に変換済みのものを使用）
+img/tatsumi.png
+img/akatsuki.png
+img/IMG_3546.HEIC
+
+# OS が生成するファイル
+Thumbs.db
+desktop.ini
+.DS_Store
