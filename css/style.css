@@ -734,26 +734,28 @@ ul { list-style: none; }
 .article-body h2 {
   font-size: 1.2rem;
   color: var(--navy);
-  margin: 48px 0 18px;
-  padding: 12px 0 12px 16px;
+  margin: 80px 0 28px;
+  padding: 14px 0 14px 18px;
   border-left: 5px solid var(--accent);
   background: var(--bg);
   border-radius: 0 6px 6px 0;
   line-height: 1.6;
 }
+.article-body h2:first-child { margin-top: 0; }
 .article-body h3 {
   font-size: 1.03rem;
   color: var(--navy);
-  margin: 32px 0 12px;
+  margin: 48px 0 16px;
   padding-bottom: 8px;
   border-bottom: 1px dashed var(--line);
 }
-.article-body p { margin-bottom: 1.4em; }
-.article-body ul, .article-body ol { margin: 0 0 1.5em; }
+.article-body p { margin-bottom: 1.9em; }
+.article-body ul, .article-body ol { margin: 0 0 2em; }
 .article-body ul li {
   padding-left: 1.5em;
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
+  line-height: 2;
 }
 .article-body ul li::before {
   content: "";
@@ -769,8 +771,8 @@ ul { list-style: none; }
 .article-body .pullquote {
   background: var(--accent-light);
   border-radius: var(--radius);
-  padding: 24px 28px;
-  margin: 28px 0;
+  padding: 28px 32px;
+  margin: 44px 0;
   font-weight: 700;
   color: var(--navy);
   line-height: 2;
@@ -807,16 +809,16 @@ ul { list-style: none; }
 
 .article-author {
   display: flex;
-  gap: 20px;
+  gap: 16px;
   align-items: flex-start;
   background: var(--bg);
   border-radius: var(--radius);
-  padding: 24px 26px;
-  margin-top: 48px;
+  padding: 22px 24px;
+  margin-top: 40px;
 }
 .article-author img {
-  width: 72px;
-  height: 72px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center 20%;
@@ -829,7 +831,7 @@ ul { list-style: none; }
   background: var(--accent-light);
   border-radius: var(--radius);
   padding: 32px 34px;
-  margin-top: 40px;
+  margin-top: 64px;
   text-align: center;
 }
 .article-cta h2 {
@@ -1053,7 +1055,9 @@ ul { list-style: none; }
   .profile-head { flex-direction: column; text-align: center; gap: 20px; }
   .profile-head .profile-title { margin-bottom: 0; }
   .article { padding: 28px 22px; }
-  .article-body h2 { font-size: 1.08rem; margin: 36px 0 14px; }
+  .article-body h2 { font-size: 1.08rem; margin: 60px 0 22px; }
+  .article-body h2:first-child { margin-top: 0; }
+  .article-body h3 { margin: 38px 0 14px; }
   .article-author { flex-direction: column; align-items: center; text-align: center; }
   .article-cta { padding: 24px 20px; }
   .price-box { padding: 18px 18px; }
