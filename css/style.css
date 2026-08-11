@@ -447,6 +447,7 @@ ul { list-style: none; }
 .price-caption { margin-top: 16px; font-size: 0.85rem; color: var(--text-sub); }
 
 /* ---------- Case study ---------- */
+.case-block[id], .service-block[id], .article-body h2[id] { scroll-margin-top: 88px; }
 .case-block {
   background: var(--white);
   border-radius: var(--radius);
@@ -817,8 +818,8 @@ ul { list-style: none; }
   margin-top: 40px;
 }
 .article-author img {
-  width: 48px;
-  height: 48px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center 20%;
