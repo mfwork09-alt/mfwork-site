@@ -471,6 +471,13 @@ ul { list-style: none; }
 }
 .price-table th { background: var(--navy); color: var(--white); font-weight: 700; }
 .price-table td.price { font-weight: 700; color: var(--navy); white-space: nowrap; }
+.price-table td a {
+  color: var(--text);
+  font-weight: 600;
+  border-bottom: 1px dotted var(--accent);
+}
+.price-table td a:hover { color: var(--accent); opacity: 1; }
+.price-table tr:hover td { background: var(--accent-light); }
 .price-caption { margin-top: 16px; font-size: 0.85rem; color: var(--text-sub); }
 
 /* ---------- Case study ---------- */
