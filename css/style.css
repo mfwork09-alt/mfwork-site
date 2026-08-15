@@ -349,6 +349,33 @@ ul { list-style: none; }
   color: var(--accent);
   font-weight: 700;
 }
+.detail-list { display: grid; gap: 14px; }
+.detail-list li {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px 20px;
+}
+.detail-list li .t {
+  display: block;
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  padding-left: 18px;
+  position: relative;
+}
+.detail-list li .t::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 9px;
+  height: 9px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+.detail-list li p { font-size: 0.9rem; color: var(--text-sub); margin: 0; padding-left: 18px; }
 .price-box {
   background: var(--bg);
   border: 1px solid var(--line);
