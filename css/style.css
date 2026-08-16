@@ -525,6 +525,9 @@ ul { list-style: none; }
   background: var(--bg);
   border-top: 1px solid var(--line);
 }
+.case-figure a { display: block; }
+.case-figure a:hover { opacity: 0.92; }
+.zoom-hint { margin-left: 6px; color: var(--accent); font-weight: 600; }
 .growth-chart {
   display: flex;
   align-items: flex-end;
