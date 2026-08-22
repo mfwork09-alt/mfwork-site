@@ -4,6 +4,9 @@ HP案.txt
 # 開発用の設定
 .claude/
 
+# note用に書き出した画像（サイトでは使用しない）
+note-images/
+
 # サイトから参照していない元画像（Web用に変換済みのものを使用）
 img/tatsumi.png
 img/akatsuki.png
