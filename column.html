@@ -63,83 +63,93 @@
       </p>
     </div>
 
-    <p class="column-section-title">サイト内の記事</p>
+    <nav class="cat-filter" aria-label="カテゴリで絞り込む">
+      <button type="button" data-filter="all" aria-pressed="true">すべて</button>
+      <button type="button" data-filter="ai" aria-pressed="false">AI活用</button>
+      <button type="button" data-filter="sns" aria-pressed="false">SNS・X運用</button>
+      <button type="button" data-filter="web" aria-pressed="false">Web集客・GBP</button>
+      <button type="button" data-filter="biz" aria-pressed="false">集客導線・経営</button>
+    </nav>
 
-    <a class="column-card" href="column/ai-shukyaku-dosen.html">
-      <span class="col-label">AI活用・集客導線</span><span class="col-date">2026年8月15日</span>
+    <p class="filter-empty" hidden>該当する記事はありません。</p>
+
+    <p class="column-section-title" data-section>サイト内の記事</p>
+
+    <a class="column-card" href="column/ai-shukyaku-dosen.html" data-cat="ai biz">
+      <span class="col-label">集客導線・経営</span><span class="col-date">2026年8月15日</span>
       <h3>「AIを導入したのに成果が出ない」本当の理由。ツールの前に整えたい“集客の導線”</h3>
       <p>AIはあくまで手段です。顧客理解 → 集客 → 営業 → 成約という流れを整理すると、AIの使い道が見えてきます。実例とチェックリスト付きで解説します。</p>
     </a>
 
-    <a class="column-card" href="column/sns-zokujinka.html">
+    <a class="column-card" href="column/sns-zokujinka.html" data-cat="sns">
       <span class="col-label">SNS・X運用</span><span class="col-date">2026年8月15日</span>
       <h3>「担当者が変わると止まる」企業の公式SNS運用。属人化させないための3つの準備</h3>
       <p>担当者の異動や退職でSNSが止まるのは、やる気ではなく仕組みの問題です。引き継ぎ資料の作成まで担当した建設業界の事例をもとに、属人化を防ぐ準備を整理しました。</p>
     </a>
 
-    <a class="column-card" href="column/gbp-post-ideas.html">
-      <span class="col-label">GBP・地域集客</span><span class="col-date">2026年8月15日</span>
+    <a class="column-card" href="column/gbp-post-ideas.html" data-cat="web">
+      <span class="col-label">Web集客・GBP</span><span class="col-date">2026年8月15日</span>
       <h3>Googleビジネスプロフィールの投稿は何を書けばいいのか</h3>
       <p>投稿ネタが思いつかない方へ。検索表示数5.6倍・電話問い合わせ3.5倍を達成した美容室の実例をもとに、成果が出た6つの投稿テーマと、無理なく続けるための工夫をまとめました。</p>
     </a>
 
-    <a class="column-card" href="column/x-shukyaku-shudan.html">
+    <a class="column-card" href="column/x-shukyaku-shudan.html" data-cat="sns biz">
       <span class="col-label">SNS・X運用</span><span class="col-date">2026年8月12日</span>
       <h3>「Xを毎日投稿すれば集客できる」は本当か。手段ではなく、課題から考える集客設計</h3>
       <p>毎日投稿するだけで集客できるなら、誰も集客には困りません。集客を仕組みにするために必要な5つの問いと、手段ではなく課題から考える進め方を整理しました。</p>
     </a>
 
-    <p class="column-section-title" style="margin-top:44px;">noteの記事</p>
+    <p class="column-section-title" style="margin-top:44px;" data-section>noteの記事</p>
 
-    <a class="column-card" href="https://note.com/mfparallel/n/n5de6339a743b" target="_blank" rel="noopener">
+    <a class="column-card" href="https://note.com/mfparallel/n/n5de6339a743b" target="_blank" rel="noopener" data-cat="ai">
       <span class="col-label">AI活用</span>
       <h3>Claude Codeの始め方。エンジニアではない私が実際に使うまで</h3>
       <p>インストールから最初のセッションまでを、非エンジニアの視点でまとめました。ターミナルを使うのは最初だけ。そのあとは日本語で会話しながら進められます。→ noteで読む</p>
     </a>
 
-    <a class="column-card" href="https://note.com/mfparallel/n/n288d0391bdc0" target="_blank" rel="noopener">
+    <a class="column-card" href="https://note.com/mfparallel/n/n288d0391bdc0" target="_blank" rel="noopener" data-cat="ai">
       <span class="col-label">AI活用</span>
       <h3>CodexにCanvaプラグインを追加してみた。名刺づくりで分かった「AI × デザイン」の新しい使い方</h3>
       <p>AIが複数案を出し、人が選んで修正を伝える。AIとデザインツールをつないで名刺を作る中で見えてきた、これからのAI活用の形をまとめました。→ noteで読む</p>
     </a>
 
-    <a class="column-card" href="https://note.com/mfparallel/n/n01111870d059" target="_blank" rel="noopener">
+    <a class="column-card" href="https://note.com/mfparallel/n/n01111870d059" target="_blank" rel="noopener" data-cat="ai">
       <span class="col-label">AI活用</span>
       <h3>CodexとCanvaで名刺を作ってみた。AIは「デザインする」だけでなく、考えを形にするところまで手伝ってくれた</h3>
       <p>AIにデザイン案の作成や調整を任せ、「何を伝えるか」は自分で決める。サイトとトーンを揃えた名刺ができるまでの過程をまとめました。→ noteで読む</p>
     </a>
 
-    <a class="column-card" href="https://note.com/mfparallel/n/n8c301974307c" target="_blank" rel="noopener">
-      <span class="col-label">AI活用・SNS運用</span>
+    <a class="column-card" href="https://note.com/mfparallel/n/n8c301974307c" target="_blank" rel="noopener" data-cat="ai sns">
+      <span class="col-label">AI活用</span>
       <h3>AIで「良く見せる」ことと、実際の魅力を「伝える」ことは違う</h3>
       <p>AIで画像が簡単に作れる時代だからこそ、大切なのは「作れるか」ではなく「どう使うか」。福祉のように安心が重視されるサービスを例に、SNS運用で守りたい一線を考えます。→ noteで読む</p>
     </a>
 
-    <a class="column-card" href="https://note.com/mfparallel/n/ne61c2919e9af" target="_blank" rel="noopener">
-      <span class="col-label">経営・マーケティング</span>
+    <a class="column-card" href="https://note.com/mfparallel/n/ne61c2919e9af" target="_blank" rel="noopener" data-cat="biz">
+      <span class="col-label">集客導線・経営</span>
       <h3>「なぜ売れないのか」は、数字だけでは分からない</h3>
       <p>数字は嘘をつきませんが、理由までは教えてくれません。売れない理由、問い合わせが来ない理由は、いつも人と現場の側にあります。AIで分析できる時代だからこそ考えたいこと。→ noteで読む</p>
     </a>
 
-    <a class="column-card" href="https://note.com/mfparallel/n/ne5eddbc1ba3f" target="_blank" rel="noopener">
+    <a class="column-card" href="https://note.com/mfparallel/n/ne5eddbc1ba3f" target="_blank" rel="noopener" data-cat="ai">
       <span class="col-label">AI活用</span>
       <h3>専門知識ゼロでも進んだ。Claude Codeでホームページを作った、実際の指示のしかた</h3>
       <p>HTMLもCSSも書けない状態から、このサイトを公開するまでに出した指示をそのまま公開。専門用語を使わずに進める方法と、AIが本当に役立った場面をまとめました。→ noteで読む</p>
     </a>
 
-    <a class="column-card" href="https://note.com/mfparallel/n/nb02da74ff232" target="_blank" rel="noopener">
+    <a class="column-card" href="https://note.com/mfparallel/n/nb02da74ff232" target="_blank" rel="noopener" data-cat="ai">
       <span class="col-label">AI活用</span>
       <h3>AIでホームページは作れる。でも、決められない。</h3>
       <p>このサイトをAIと作り直した記録。実装は驚くほど速く進む一方で、料金に何を含めるか、実績をどう見せるかといった「決めること」は減りませんでした。→ noteで読む</p>
     </a>
 
-    <a class="column-card" href="https://note.com/mfparallel/n/nce3e5140692c" target="_blank" rel="noopener">
-      <span class="col-label">AI × SNS</span>
+    <a class="column-card" href="https://note.com/mfparallel/n/nce3e5140692c" target="_blank" rel="noopener" data-cat="ai sns">
+      <span class="col-label">AI活用</span>
       <h3>AIでSNS投稿を増やす前に考えたいこと。AI × SNSで大切なのは「信頼」だと思う</h3>
       <p>AIで発信を効率化できる時代だからこそ、大切なのは投稿量ではなくフォロワーとの信頼関係。人にしか出せない経験や思考をどう活かすかを考えます。→ noteで読む</p>
     </a>
 
-    <a class="column-card" href="https://note.com/mfparallel" target="_blank" rel="noopener">
+    <a class="column-card" href="https://note.com/mfparallel" target="_blank" rel="noopener" data-static>
       <span class="col-label">note</span>
       <h3>最新記事はnoteで公開しています</h3>
       <p>noteの記事と連携し、Google検索 → コラム → サービスページ → お問い合わせ という導線も育てていきます。</p>
@@ -188,6 +198,8 @@
   </div>
   <p class="copyright">&copy; 2026 MFWORK. All Rights Reserved.</p>
 </footer>
+
+<script src="js/column-filter.js"></script>
 
 </body>
 </html>
