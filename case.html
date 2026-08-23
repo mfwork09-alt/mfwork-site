@@ -57,7 +57,40 @@
 <section class="section">
   <div class="container-narrow">
 
-    <div class="case-block" id="case-tatsumi">
+    <div class="result-summary">
+      <p class="rs-title">これまでの支援で生まれた主な成果</p>
+      <div class="rs-grid">
+        <div class="rs-item">
+          <span class="rs-num">5.6倍</span>
+          <span class="rs-label">検索表示数<br>（美容室・前年同月比）</span>
+        </div>
+        <div class="rs-item">
+          <span class="rs-num">3.5倍</span>
+          <span class="rs-label">電話問い合わせ<br>（美容室・前年同月比）</span>
+        </div>
+        <div class="rs-item">
+          <span class="rs-num">約73倍</span>
+          <span class="rs-label">Xのフォロワー数<br>（約1年間の支援）</span>
+        </div>
+        <div class="rs-item">
+          <span class="rs-num">6／7項目</span>
+          <span class="rs-label">KPIを達成・超過<br>（建設業・約3か月）</span>
+        </div>
+      </div>
+      <p class="rs-note">※各事例の詳しい支援内容と数値は、以下でご紹介しています。</p>
+    </div>
+
+    <nav class="cat-filter" aria-label="カテゴリで絞り込む">
+      <button type="button" data-filter="all" aria-pressed="true">すべて</button>
+      <button type="button" data-filter="sns" aria-pressed="false">SNS・X運用</button>
+      <button type="button" data-filter="web" aria-pressed="false">Web集客・HP制作</button>
+      <button type="button" data-filter="gbp" aria-pressed="false">GBP・地域集客</button>
+      <button type="button" data-filter="ai" aria-pressed="false">AI活用</button>
+    </nav>
+
+    <p class="filter-empty" hidden>該当する事例はありません。</p>
+
+    <div class="case-block" id="case-tatsumi" data-cat="web gbp">
       <span class="case-tag">HP制作・GBP運用</span>
       <h3>株式会社辰巳工務店様（徳島県鳴門市）｜HP制作・GBP運用サポート</h3>
       <p class="case-lead">
@@ -106,7 +139,7 @@
       </div>
     </div>
 
-    <div class="case-block" id="case-mfwork">
+    <div class="case-block" id="case-mfwork" data-cat="ai web">
       <span class="case-tag">AI活用・HP制作</span>
       <h3>MFWORK公式サイト（当サイト）｜生成AIを活用したホームページ制作</h3>
       <p class="case-lead">
@@ -168,7 +201,7 @@
       </div>
     </div>
 
-    <div class="case-block" id="case-akatsuki">
+    <div class="case-block" id="case-akatsuki" data-cat="gbp">
       <span class="case-tag">GBP運用代行</span>
       <h3>髪屋 暁様（静岡県富士宮市・美容室）｜Googleビジネスプロフィール運用代行</h3>
       <p class="case-lead">
@@ -234,7 +267,7 @@
       </div>
     </div>
 
-    <div class="case-block" id="case-sharoushi">
+    <div class="case-block" id="case-sharoushi" data-cat="sns">
       <span class="case-tag">X運用支援</span>
       <h3>社会保険労務士｜X運用支援</h3>
       <p class="case-lead">
@@ -282,7 +315,7 @@
       </div>
     </div>
 
-    <div class="case-block" id="case-btob-ceo">
+    <div class="case-block" id="case-btob-ceo" data-cat="sns">
       <span class="case-tag">X運用支援</span>
       <h3>BtoB企業 代表取締役｜X運用支援</h3>
       <p class="case-lead">
@@ -332,7 +365,7 @@
       </div>
     </div>
 
-    <div class="case-block" id="case-btob-pr">
+    <div class="case-block" id="case-btob-pr" data-cat="sns">
       <span class="case-tag">X運用支援</span>
       <h3>BtoB企業 広報担当者｜X運用支援</h3>
       <p class="case-lead">
@@ -369,7 +402,7 @@
       </div>
     </div>
 
-    <div class="case-block" id="case-kensetsu">
+    <div class="case-block" id="case-kensetsu" data-cat="sns">
       <span class="case-tag">公式X運用支援</span>
       <h3>建設業界の企業｜公式X（旧Twitter）運用支援</h3>
       <p class="case-lead">
@@ -412,7 +445,7 @@
       </div>
     </div>
 
-    <div class="case-block" id="case-sports">
+    <div class="case-block" id="case-sports" data-cat="sns">
       <span class="case-tag">公式X運用支援</span>
       <h3>スポーツ関連企業｜公式X運用支援</h3>
       <p class="case-lead">
@@ -495,6 +528,8 @@
 </footer>
 
 <script src="js/lightbox.js"></script>
+<script src="js/filter.js"></script>
+<script src="js/sticky-cta.js"></script>
 
 </body>
 </html>
