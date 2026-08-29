@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>毎月の作業を減らすために、自分用のツールを作った｜AI業務効率化の実例｜MFWORK</title>
+<meta name="description" content="Googleビジネスプロフィール運用のヒアリングシート作成を、生成AIで効率化した実例。時間がかかったのはツール制作ではなく「自分がどう判断しているか」の言語化でした。業務効率化の進め方を具体的に解説します。">
+<link rel="canonical" href="https://mfwork-jp.com/column/gyomu-tool.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="MFWORK">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="毎月の作業を減らすために、自分用のツールを作った。AIに任せたのは作業、仕込んだのは判断基準">
+<meta property="og:description" content="AIで業務効率化と聞くと作業を任せることを想像しますが、実際にやったのは「自分が無意識にやっていた判断を言葉にして残す」ことでした。GBP運用の実例で解説します。">
+<meta property="og:url" content="https://mfwork-jp.com/column/gyomu-tool.html">
+<meta property="og:image" content="https://mfwork-jp.com/img/ogp.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mfwork-jp.com/img/ogp.jpg">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CSY0PHVM42"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CSY0PHVM42');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://mfwork-jp.com/column/gyomu-tool.html#article",
+      "headline": "毎月の作業を減らすために、自分用のツールを作った。AIに任せたのは作業、仕込んだのは判断基準",
+      "description": "AIで業務効率化と聞くと作業を任せることを想像しますが、実際にやったのは「自分が無意識にやっていた判断を言葉にして残す」ことでした。GBP運用の実例で解説します。",
+      "image": "https://mfwork-jp.com/img/ogp.jpg",
+      "datePublished": "2026-08-29",
+      "dateModified": "2026-08-29",
+      "inLanguage": "ja",
+      "mainEntityOfPage": "https://mfwork-jp.com/column/gyomu-tool.html",
+      "author": { "@id": "https://mfwork-jp.com/#person" },
+      "publisher": { "@id": "https://mfwork-jp.com/#business" },
+      "about": ["生成AI活用", "業務効率化", "属人化", "Googleビジネスプロフィール"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://mfwork-jp.com/#person",
+      "name": "古川 真理",
+      "url": "https://mfwork-jp.com/about.html",
+      "jobTitle": "Webマーケティング／SNS・集客導線設計／生成AI活用"
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://mfwork-jp.com/#business",
+      "name": "MFWORK",
+      "url": "https://mfwork-jp.com/",
+      "logo": "https://mfwork-jp.com/img/favicon.png"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "TOP", "item": "https://mfwork-jp.com/" },
+        { "@type": "ListItem", "position": 2, "name": "COLUMN", "item": "https://mfwork-jp.com/column.html" },
+        { "@type": "ListItem", "position": 3, "name": "毎月の作業を減らすために、自分用のツールを作った" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "AIで業務効率化を始めるとき、何から手をつければよいですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "新しいツールを探す前に、その業務で自分が何をどう判断しているかを書き出すことをおすすめします。判断基準が言葉になっていない状態では、AIに任せる範囲を決められません。書き出す作業そのものが、属人化の解消にもつながります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "AIに業務を任せると、品質は下がりませんか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "任せる範囲によります。実例では、AIが担ったのは手順を実行する部分だけで、どんなテーマを扱うか、どの表現を避けるか、何を確認すれば事故を防げるかといった判断基準は、実務経験にもとづいて人が定義しました。出力後の確認も人が行っています。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "業務効率化のツールは、どんな業務に向いていますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "毎月や毎週など、繰り返し発生し、判断の型がある程度決まっている業務が向いています。逆に、毎回条件が大きく変わる業務や、その場の対話が中心となる業務は、無理に仕組み化しないほうがよい場合があります。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../index.html" class="site-logo">MFWORK<small>古川真理｜SNS × Web × AI 集客導線設計</small></a>
+    <button class="nav-toggle" aria-label="メニュー" onclick="document.querySelector('.global-nav').classList.toggle('open')">☰</button>
+    <nav class="global-nav">
+      <ul>
+        <li><a href="../index.html">TOP</a></li>
+        <li><a href="../service.html">SERVICE</a></li>
+        <li><a href="../case.html">CASE STUDY</a></li>
+        <li><a href="../about.html">ABOUT</a></li>
+        <li><a href="../column.html" class="current">COLUMN</a></li>
+        <li><a href="../contact.html" class="nav-cta">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero">
+  <span class="en">COLUMN</span>
+  <h1>コラム</h1>
+</div>
+
+<section class="section">
+  <div class="container-narrow">
+
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <a href="../index.html">TOP</a><span>›</span><a href="../column.html">COLUMN</a><span>›</span>毎月の作業を減らすために、自分用のツールを作った
+    </nav>
+
+    <article class="article">
+      <div class="article-meta">
+        <span class="cat">AI活用・業務効率化</span>
+        <time datetime="2026-08-29">2026年8月29日</time>
+      </div>
+
+      <h1>毎月の作業を減らすために、自分用のツールを作った。<br>AIに任せたのは作業、仕込んだのは判断基準</h1>
+
+      <p class="article-lead">
+        Googleビジネスプロフィール（GBP）の運用を、ある店舗様で継続的に支援しています。
+      </p>
+      <p class="article-lead">
+        毎月の作業を助けるツールを、生成AIを使って作りました。
+        その過程で分かったのは、<strong>時間がかかるのはツール作りではなく、「自分がどう判断しているか」を言葉にすること</strong>だという事実でした。
+      </p>
+
+      <nav class="toc" aria-label="目次">
+        <p class="toc-title">目次</p>
+        <ol>
+          <li><a href="#h1">毎月やっている2つの作業</a></li>
+          <li><a href="#h2">なぜツールにしようと思ったか</a></li>
+          <li><a href="#h3">作ったもの</a></li>
+          <li><a href="#h4">いちばん時間をかけたのは、ルールの言語化</a></li>
+          <li><a href="#h5">方針も、仕組みに入れた</a></li>
+          <li><a href="#h6">AIが作ったのは「箱」、中身は運用の知識</a></li>
+          <li><a href="#h7">よくある質問</a></li>
+          <li><a href="#h8">まとめ｜業務効率化とは、判断基準を言語化すること</a></li>
+        </ol>
+      </nav>
+
+      <div class="article-body">
+
+        <h2 id="h1">毎月やっている2つの作業</h2>
+
+        <p>
+          GBP運用の支援で、月次でやっていることは大きく2つです。
+        </p>
+        <ul>
+          <li><strong>ヒアリングシートを作る</strong>：翌月の投稿計画を立て、オーナー様に確認したいことを質問としてまとめる</li>
+          <li><strong>回答をまとめる</strong>：返ってきた回答をもとに、投稿スケジュールを確定させる</li>
+        </ul>
+        <p>
+          この2つを、毎月繰り返しています。
+        </p>
+
+        <h2 id="h2">なぜツールにしようと思ったか</h2>
+
+        <p>
+          作業自体は、それほど時間がかかりません。慣れているので、手を動かせば終わります。
+        </p>
+        <p>
+          でも、あるとき気づきました。
+        </p>
+
+        <p class="pullquote">
+          毎月、同じ判断を頭の中で繰り返している。
+        </p>
+
+        <ul>
+          <li>この月はどんなテーマが使えるか</li>
+          <li>記念日と定休日は重なっていないか</li>
+          <li>この表現は使ってよかったか、避けるべきだったか</li>
+          <li>質問は何問までなら負担にならないか</li>
+        </ul>
+
+        <p>
+          これらは全部、私の頭の中にしかありませんでした。
+        </p>
+        <p>
+          以前、<a href="sns-zokujinka.html">「担当者が変わると止まる」企業の公式SNS運用</a>という記事を書きました。
+          判断基準を残さなければ、人が変わった時点で運用は止まる、という内容です。
+        </p>
+        <p>
+          <strong>まさに自分がその状態でした。</strong>
+        </p>
+        <p>
+          「判断基準を残しましょう」と書いておきながら、自分の運用は頭の中で回している。それが気になっていました。
+        </p>
+
+        <h2 id="h3">作ったもの</h2>
+
+        <p>
+          生成AI（Claude Code）の「スキル」という仕組みを使いました。
+          特定のフォルダで作業するときだけ読み込まれる、専用の手順書のようなものです。
+        </p>
+
+        <p class="service-sub" style="margin-top:32px;">2つのモード</p>
+
+        <ul class="detail-list">
+          <li>
+            <span class="t">作成モード</span>
+            <p>「来月のヒアリングシートを作って」と伝えると、投稿計画と週ごとの質問を組み立て、Word形式のファイルまで出力します。</p>
+          </li>
+          <li>
+            <span class="t">まとめモード</span>
+            <p>オーナー様の回答を貼り付けて「まとめて」と伝えると、内容を確認したうえで、改訂後のスケジュールと運用のTODOを整理します。</p>
+          </li>
+        </ul>
+
+        <p style="margin-top:28px;">中身は、こういう構成です。</p>
+
+        <ul>
+          <li><strong>クライアント情報</strong>：基本情報、料金、訴求できる強み、使わない表現の一覧</li>
+          <li><strong>年間カレンダー</strong>：月ごとに使えるテーマ、投稿の組み方、確認すべき注意点</li>
+          <li><strong>雛形</strong>：作成モードとまとめモード、それぞれの型</li>
+        </ul>
+
+        <h2 id="h4">いちばん時間をかけたのは、ルールの言語化</h2>
+
+        <p>
+          ツールを作る作業自体は、驚くほど速く進みました。
+        </p>
+        <p>
+          時間がかかったのは、<strong>「自分が毎月どう判断しているか」を言葉にすること</strong>でした。
+        </p>
+        <p>
+          そして、その材料になったのは<strong>過去にヒヤリとした場面</strong>でした。
+        </p>
+
+        <h3>① 使わない表現が、選択肢に紛れ込んだことがあった</h3>
+        <p>
+          質問の選択肢を作るとき、クライアント様が普段使わない言い回しが混ざってしまったことがありました。
+        </p>
+        <p>
+          <strong>対策</strong>：本文だけでなく、選択肢の文言まで含めて、使わない表現の一覧と全文照合する。
+        </p>
+
+        <h3>② 記念日が定休日と重なっていた</h3>
+        <p>
+          記念日に合わせた投稿を計画したものの、その日が定休日だったことがありました。
+        </p>
+        <p>
+          <strong>対策</strong>：記念日を使うときは、必ず営業日かどうかを確認する。
+        </p>
+
+        <h3>③ 地域の行事と営業日が食い違っていた</h3>
+        <p>
+          地域のイベントに合わせた投稿を考えたら、店舗はその日お休みだったということがありました。
+        </p>
+        <p>
+          <strong>対策</strong>：イベント日程と営業日を照合し、「店舗は休み、会場で対応」という書き方に切り替える。
+        </p>
+
+        <h3>④ 満席なのに予約を促していた</h3>
+        <p>
+          予約がほぼ埋まっている時期に、予約を促す投稿を予定していたことがありました。
+        </p>
+        <p>
+          <strong>対策</strong>：満席の申告があったら、予約促進の文言をすべて削除し、御礼と告知に切り替える。
+        </p>
+
+        <p>
+          こうして並べてみると、<strong>どれも「一度やってしまったこと」</strong>です。
+        </p>
+        <p>
+          そのときは気づいて直しました。でも、直したことは私の記憶の中にしか残っていませんでした。
+        </p>
+
+        <p class="pullquote">
+          それをルールとして書き出したのが、<br>
+          今回の作業の中心でした。
+        </p>
+
+        <h2 id="h5">方針も、仕組みに入れた</h2>
+
+        <p>
+          失敗からのルールだけではありません。<strong>この運用で大切にしている方針</strong>も入れました。
+        </p>
+
+        <h3>質問は1週につき1問、選択式にする</h3>
+        <p>
+          オーナー様は日々の業務でお忙しい方です。白紙に書き出してもらうのは負担が大きい。
+          <strong>選ぶだけなら、数分で終わります。</strong>
+        </p>
+
+        <h3>自由記述は、要約せずに原文のまま残す</h3>
+        <p>
+          オーナー様が書いてくださった言葉は、そのまま投稿の説得力になります。
+          こちらで要約してしまうと、その温度が失われます。
+        </p>
+
+        <h3>クライアント情報は、確認のうえ日付付きで新版を作る</h3>
+        <p>
+          勝手に書き換えず、過去の版を履歴として残すためです。
+        </p>
+
+        <h2 id="h6">AIが作ったのは「箱」、中身は運用の知識</h2>
+
+        <p>
+          できあがったものを見て、はっきり感じたことがあります。
+        </p>
+        <p>
+          <strong>AIが作ったのは、動く仕組みの部分だけです。</strong>
+        </p>
+        <ul>
+          <li>どんなテーマを扱うか</li>
+          <li>どの表現を避けるか</li>
+          <li>質問を何問にするか</li>
+          <li>何を確認すれば事故が防げるか</li>
+        </ul>
+        <p>
+          これらは全部、<strong>実際に運用してきたから分かること</strong>でした。AIには判断できません。
+        </p>
+        <p>
+          逆に言えば、<strong>運用の経験がある人ほど、AIで作るツールの精度が上がる</strong>ということでもあります。
+        </p>
+        <p>
+          実際に翌月分のシートを試しに生成してみたところ、その月の曜日の並びを踏まえた日程調整、
+          祝日の連休の活用、口コミで何度も言及されているのにまだ発信していなかった要素の投入まで、自動で組めていました。
+        </p>
+        <p>
+          もちろん、そのまま使うわけではありません。<strong>私が確認して、直します。</strong> そこは変わりません。
+        </p>
+        <p>
+          ただ、<strong>ゼロから考える時間はなくなりました。</strong>
+        </p>
+
+        <h2 id="h7">よくある質問</h2>
+
+        <ul class="qa-list">
+          <li>
+            <span class="q">Q. AIで業務効率化を始めるとき、何から手をつければよいですか？</span>
+            新しいツールを探す前に、その業務で「自分が何をどう判断しているか」を書き出すことをおすすめします。判断基準が言葉になっていない状態では、AIに任せる範囲を決められません。書き出す作業そのものが、属人化の解消にもなります。
+          </li>
+          <li>
+            <span class="q">Q. AIに業務を任せると、品質は下がりませんか？</span>
+            任せる範囲によります。今回AIが担ったのは手順を実行する部分だけで、どんなテーマを扱うか、どの表現を避けるかといった判断基準は、実務の経験にもとづいて人が定義しました。出力後の確認も人が行っています。
+          </li>
+          <li>
+            <span class="q">Q. どんな業務がツール化に向いていますか？</span>
+            毎月・毎週など繰り返し発生し、判断の型がある程度決まっている業務が向いています。逆に、毎回条件が大きく変わる業務や、その場の対話が中心となる業務は、無理に仕組み化しないほうがよい場合もあります。
+          </li>
+        </ul>
+
+        <h2 id="h8">まとめ｜業務効率化とは、判断基準を言語化すること</h2>
+
+        <p>
+          「AIで業務効率化」と聞くと、作業を丸ごと任せることを想像するかもしれません。
+        </p>
+        <p>
+          でも今回やったことは、少し違いました。
+        </p>
+
+        <p class="pullquote">
+          自分が無意識にやっていた判断を、<br>
+          言葉にして残した。
+        </p>
+
+        <p>
+          その結果として、作業が速くなった。順番はこちらでした。
+        </p>
+        <p>
+          だから、こう思っています。
+        </p>
+        <p>
+          <strong>AIを入れる前に、「自分は何をどう判断しているのか」を書き出してみる。</strong>
+        </p>
+        <p>
+          それができれば、ツールは後からいくらでも作れます。そして書き出す作業そのものが、属人化の解消にもなります。
+        </p>
+        <p>
+          私の場合は、<strong>過去の失敗が、いちばん良い材料</strong>でした。
+        </p>
+
+      </div>
+
+      <div class="article-cta">
+        <h2>「うちの業務でも、こういうことができないか」</h2>
+        <p>
+          そんなご相談も歓迎しています。<br>
+          AI活用ありきではなく、まず現在の業務と課題を伺うところから一緒に整理します。
+        </p>
+        <a href="../contact.html" class="btn btn-accent">相談・お問い合わせはこちら</a>
+      </div>
+
+      <div class="related-links">
+        <p class="rel-title">関連ページ</p>
+        <ul>
+          <li><a href="../service.html#service04">生成AI活用支援｜支援内容と料金を見る →</a></li>
+          <li><a href="sns-zokujinka.html">「担当者が変わると止まる」企業の公式SNS運用。属人化させないための3つの準備 →</a></li>
+          <li><a href="gbp-post-ideas.html">Googleビジネスプロフィールの投稿は何を書けばいいのか →</a></li>
+          <li><a href="ai-shukyaku-dosen.html">「AIを導入したのに成果が出ない」本当の理由 →</a></li>
+        </ul>
+      </div>
+
+      <div class="article-author">
+        <img src="../img/IMG_3546.jpg" alt="古川真理" loading="lazy">
+        <div>
+          <p class="name">古川 真理（MFWORK）</p>
+          <p>
+            X運用・コンサルティング歴7年以上。SNS運用、Webサイト改善、Googleビジネスプロフィール、SEO／MEOなど、
+            Web集客を幅広く支援しています。コールセンター経験15年以上、現在はインサイドセールスの実務にも従事。
+            上級SNSマネージャー、生成AIプロンプトエンジニア検定 合格。
+            <a href="../about.html">プロフィールを見る →</a>
+          </p>
+        </div>
+      </div>
+
+    </article>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <strong>MFWORK</strong>
+      古川真理｜Webマーケティング／SNS・集客導線設計／生成AI活用
+      <ul class="sns-links">
+        <li><a href="https://x.com/mfparallel" target="_blank" rel="noopener" aria-label="X（旧Twitter）"><img src="../img/logo-black.png" alt="X"></a></li>
+        <li><a href="https://note.com/mfparallel" target="_blank" rel="noopener" aria-label="note"><img src="../img/logo.png" alt="note"></a></li>
+        <li><a href="https://www.linkedin.com/in/mfwork09/" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="../img/InBug-Black.png" alt="LinkedIn"></a></li>
+      </ul>
+    </div>
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="../index.html">TOP</a></li>
+        <li><a href="../service.html">SERVICE</a></li>
+        <li><a href="../case.html">CASE STUDY</a></li>
+      </ul>
+      <ul>
+        <li><a href="../about.html">ABOUT</a></li>
+        <li><a href="../column.html">COLUMN</a></li>
+        <li><a href="../contact.html">CONTACT</a></li>
+      </ul>
+      <ul>
+        <li><a href="../privacy.html">プライバシーポリシー</a></li>
+        <li><a href="../tokushoho.html">特定商取引法に基づく表記</a></li>
+      </ul>
+    </nav>
+  </div>
+  <p class="copyright">&copy; 2026 MFWORK. All Rights Reserved.</p>
+</footer>
+
+<script src="../js/sticky-cta.js"></script>
+<script src="../js/reveal.js"></script>
+
+</body>
+</html>
