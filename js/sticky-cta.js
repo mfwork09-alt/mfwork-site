@@ -6,8 +6,10 @@
   'use strict';
 
   // お問い合わせページとサンクスページでは不要
+  // 診断ページは専用のCTAを持っているので、追従バーは出さない
   var path = location.pathname;
   if (/contact\.html$/.test(path) || /thanks\.html$/.test(path)) return;
+  if (/sales-diagnosis\.html$/.test(path)) return;
 
   var bar = document.createElement('div');
   bar.className = 'sticky-cta';

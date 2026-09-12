@@ -52,6 +52,7 @@
 - [CASE STUDY](https://mfwork-jp.com/case.html): 実績6件（課題・支援内容・成果）
 - [ABOUT](https://mfwork-jp.com/about.html): プロフィール・経歴・資格・支援スタンス
 - [COLUMN](https://mfwork-jp.com/column.html): SNS・Web集客・生成AI活用に関する記事（noteと連携）
+- [営業属人化・再現性 無料診断](https://mfwork-jp.com/sales-diagnosis.html): 営業プロセスの標準化、会話中の判断基準、トップセールスの暗黙知共有、見込み判定、新人育成の5分野を15問でセルフチェックできる無料診断（登録不要・その場で結果表示）
 - [CONTACT](https://mfwork-jp.com/contact.html): お問い合わせフォーム
 
 ## 発信媒体
