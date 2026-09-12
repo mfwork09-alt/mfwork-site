@@ -23,6 +23,7 @@
     '.case-block',
     '.column-card',
     '.result-summary',
+    '.diag-promo',
     '.profile-card',
     '.stance',
     '.exp-grid li',
