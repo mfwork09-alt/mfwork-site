@@ -68,6 +68,8 @@
     </div>
 
     <form class="contact-form" id="contactForm" action="https://ssgform.com/s/JcPst3vdgggj" method="post">
+      <!-- どのページから来たかの記録。値がないときはJS側で無効化する -->
+      <input type="hidden" id="leadSource" name="流入元" value="" disabled>
       <div class="form-row">
         <label class="field-label" for="company">会社名・屋号<span class="optional">任意</span></label>
         <input type="text" id="company" name="会社名" placeholder="例）株式会社〇〇">
@@ -97,8 +99,18 @@
           <label><input type="checkbox" name="相談内容[]" value="GBP">Googleビジネスプロフィール</label>
           <label><input type="checkbox" name="相談内容[]" value="ホームページ改善">ホームページ改善</label>
           <label><input type="checkbox" name="相談内容[]" value="AI活用">AI活用</label>
+          <label><input type="checkbox" name="相談内容[]" value="営業の属人化・標準化">営業の属人化・標準化</label>
           <label><input type="checkbox" name="相談内容[]" value="その他">その他</label>
         </div>
+        <p class="form-error" id="topicError" role="alert" hidden></p>
+      </div>
+
+      <div class="form-row" id="diagResultRow" hidden>
+        <label class="field-label" for="diagResultText">診断結果<span class="optional">任意</span></label>
+        <p class="field-hint" id="diagResultNote" hidden>
+          先ほどの診断結果を自動で入力しました。不要な場合は削除していただいて構いません。
+        </p>
+        <textarea id="diagResultText" class="compact" name="診断結果" disabled placeholder="例）診断スコア 58 / 75（属人化リスク 高）"></textarea>
       </div>
 
       <div class="form-row">
@@ -115,6 +127,7 @@
         <label class="field-label" for="budget">ご予算<span class="optional">任意</span></label>
         <select id="budget" name="予算">
           <option value="">選択してください</option>
+          <option>まずは無料診断を希望（予算は未定）</option>
           <option>〜3万円／月</option>
           <option>3〜5万円／月</option>
           <option>5〜10万円／月</option>
@@ -177,6 +190,7 @@
   <p class="copyright">&copy; 2026 MFWORK. All Rights Reserved.</p>
 </footer>
 
+<script src="js/contact-form.js"></script>
 <script src="js/reveal.js"></script>
 
 </body>

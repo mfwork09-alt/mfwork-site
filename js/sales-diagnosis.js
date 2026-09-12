@@ -257,6 +257,8 @@
     var top = result.getBoundingClientRect().top + (window.scrollY || document.documentElement.scrollTop);
     window.scrollTo({ top: Math.max(0, top - 88), behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
 
+    saveResult(total, level, scores);
+
     track('diagnosis_complete', {
       total_score: total,
       risk_level: level
@@ -343,12 +345,8 @@
     });
   }
 
-  /* スコアの高いカテゴリから「見直すとよいポイント」を出す */
-  function renderFocus(scores) {
-    var wrap = document.getElementById('resFocus');
-    if (!wrap) return;
-    wrap.innerHTML = '';
-
+  /* スコアが高い順にカテゴリを並べ、注目すべきものを選ぶ */
+  function topCategories(scores) {
     var ranked = CATEGORIES.slice().sort(function (a, b) {
       return scores[b.id] - scores[a.id];
     });
@@ -356,9 +354,35 @@
     var picked = ranked.filter(function (cat) { return scores[cat.id] >= 11; });
     if (!picked.length) picked = ranked.filter(function (cat) { return scores[cat.id] >= 7; });
     if (!picked.length) picked = ranked.slice(0, 1);
-    picked = picked.slice(0, 3);
+    return picked.slice(0, 3);
+  }
 
-    picked.forEach(function (cat) {
+  /* 結果をブラウザに一時保存する。
+     お問い合わせページへ進んだときに「診断結果」欄へ自動で書き写すために使う。
+     sessionStorage なのでタブを閉じれば消える。URLには載せない。 */
+  function saveResult(total, level, scores) {
+    if (!window.sessionStorage) return;
+    try {
+      sessionStorage.setItem('mfwork_diag_result', JSON.stringify({
+        score: total,
+        max: 75,
+        level: LEVEL_LABEL[level],
+        top: topCategories(scores).map(function (cat) {
+          return cat.name + '（' + scores[cat.id] + '/15）';
+        })
+      }));
+    } catch (e) {
+      /* プライベートモードなどで保存できなくても診断は続行する */
+    }
+  }
+
+  /* スコアの高いカテゴリから「見直すとよいポイント」を出す */
+  function renderFocus(scores) {
+    var wrap = document.getElementById('resFocus');
+    if (!wrap) return;
+    wrap.innerHTML = '';
+
+    topCategories(scores).forEach(function (cat) {
       var li = document.createElement('li');
       var strong = document.createElement('strong');
       strong.textContent = cat.name;
