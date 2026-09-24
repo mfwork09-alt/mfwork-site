@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://mfwork-jp.com/column.html</loc>
-    <lastmod>2026-09-20</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -49,6 +49,11 @@
     <loc>https://mfwork-jp.com/column/gyomu-tool.html</loc>
     <lastmod>2026-08-29</lastmod>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mfwork-jp.com/column/gbp-setting-check.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mfwork-jp.com/column/eigyo-zokujinka.html</loc>
