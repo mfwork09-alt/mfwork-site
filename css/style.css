@@ -33,6 +33,12 @@ body {
 img { max-width: 100%; display: block; }
 a { color: var(--accent); text-decoration: none; }
 a:hover { opacity: 0.85; }
+/* 本文の流れの中に置く導線リンク。読み飛ばされないよう下線を残す */
+.inline-link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 700;
+}
 ul { list-style: none; }
 
 .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
