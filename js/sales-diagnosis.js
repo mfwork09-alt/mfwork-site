@@ -136,10 +136,25 @@
     }
   }
 
+  /* どのステップまで進んだかを見るための計測。
+     戻る・やり直しで二重に数えないよう、各ステップにつき1回だけ送る。 */
+  var trackedSteps = {};
+
+  function trackStep(index) {
+    if (trackedSteps[index]) return;
+    trackedSteps[index] = true;
+    var cat = CATEGORIES[index];
+    track('diagnosis_step', {
+      step: index + 1,
+      step_name: cat ? cat.name : ''
+    });
+  }
+
   /* ---------- 表示の切り替え ---------- */
 
   function showStep(index, opts) {
     current = index;
+    trackStep(index);
     steps.forEach(function (step, i) {
       step.hidden = (i !== index);
     });
