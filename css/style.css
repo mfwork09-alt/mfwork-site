@@ -1264,6 +1264,95 @@ body.lightbox-open { overflow: hidden; }
   margin-top: 18px;
 }
 
+/* ---------- 動画の埋め込み（縦型） ---------- */
+.video-embed {
+  max-width: 320px;
+  margin: 30px auto 0;
+}
+.video-embed-stage {
+  position: relative;
+  aspect-ratio: 9 / 16;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--navy-dark);
+  box-shadow: var(--shadow);
+}
+.video-embed-stage iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+.video-embed-trigger {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+}
+.video-embed-trigger img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.video-embed-trigger::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(19, 31, 56, 0.1) 40%, rgba(19, 31, 56, 0.75));
+}
+.video-embed-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 4px 18px rgba(19, 31, 56, 0.35);
+  z-index: 1;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.video-embed-play::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 11px 0 11px 18px;
+  border-color: transparent transparent transparent var(--navy);
+}
+.video-embed-trigger:hover .video-embed-play { transform: translate(-50%, -50%) scale(1.06); background: var(--white); }
+.video-embed-trigger:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+/* 動画の中にも字幕が入るため、所要時間は右上の小さなバッジに留める */
+.video-embed-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+  background: rgba(19, 31, 56, 0.72);
+  color: var(--white);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+.video-embed figcaption {
+  font-size: 0.82rem;
+  color: var(--text-sub);
+  line-height: 1.8;
+  margin-top: 12px;
+  text-align: left;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .video-embed-play { transition: none; }
+}
+
 /* ---------- 診断への案内ブロック（SERVICEページ末尾） ---------- */
 .diag-promo {
   margin-top: 56px;
